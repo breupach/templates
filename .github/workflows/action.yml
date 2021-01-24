@@ -14,10 +14,6 @@ jobs:
         with:
           java-version: 14-ea
       - name: Maven Package
-        run: |
-        cd tokenSpringSecurity
-        mvn clean package
+        run: mvn -f tokenSpringSecurity clean package
       - name: Maven Verify
-        run: |
-        cd tokenSpringSecurity
-        mvn clean verify -DskipTests
+        run: mvn -f tokenSpringSecurity clean verify -DskipTests
