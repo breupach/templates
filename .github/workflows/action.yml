@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - 'develop'
+      - 'main'
 jobs:
   test:
     name: templateSpringSecurity
@@ -15,7 +16,5 @@ jobs:
           java-version: 14-ea
       - name: Maven Package
         run: mvn -f tokenSpringSecurity clean package
-      - name: Maven Test
-        run: mvn -f tokenSpringSecurity test
       - name: Maven Verify
         run: mvn -f tokenSpringSecurity clean verify -DskipTests
